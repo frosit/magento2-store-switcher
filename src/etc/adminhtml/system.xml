@@ -21,6 +21,11 @@
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="scope_to_current_store" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="select">
+                    <label>Scope to current store</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Shows only store views from the current store instead of all websites.</comment>
+                </field>
                 <field id="render_type" showInDefault="1" showInWebsite="0" showInStore="0" translate="label,comment" type="select">
                     <label>Render type</label>
                     <source_model>Elgentos\StoreSwitcher\Model\Config\Source\RenderTypes</source_model>

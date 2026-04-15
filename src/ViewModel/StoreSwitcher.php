@@ -85,7 +85,11 @@ class StoreSwitcher extends HyvaStoreSwitcher
         $websiteStores = [];
 
         /** @var Website[] $websites */
-        $websites = $this->storeManager->getWebsites();
+        $websites = [];
+
+        $websites = $this->configuration->getIsScopeToCurrent()
+            ? [$this->storeManager->getWebsite()]
+            : $this->storeManager->getWebsites();
 
         foreach ($websites as $website) {
             $stores = $website->getStores();

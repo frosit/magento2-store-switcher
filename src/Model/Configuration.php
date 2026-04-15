@@ -24,6 +24,7 @@ readonly class Configuration
         self::RENDER_TYPE_NAME => 'Name',
     ];
     public const string RENDER_TYPE_XML_PATH = 'store_switcher/general/render_type';
+    public const string SCOPE_TO_CURRENT_XML_PATH = 'store_switcher/general/scope_to_current';
     public const string ICON_NAME_XML_PATH = 'store_switcher/general/icon_name';
 
     public function __construct(
@@ -35,6 +36,15 @@ readonly class Configuration
     {
         return (string) $this->scopeConfig->getValue(
             self::RENDER_TYPE_XML_PATH,
+            ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
+    public function getIsScopeToCurrent(?StoreInterface $store = null): bool
+    {
+        return (bool) $this->scopeConfig->getValue(
+            self::SCOPE_TO_CURRENT_XML_PATH,
             ScopeInterface::SCOPE_STORE,
             $store
         );

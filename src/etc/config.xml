@@ -10,6 +10,7 @@
         <store_switcher>
             <general>
                 <enabled>0</enabled>
+                <scope_to_current_store>0</scope_to_current_store>
                 <render_type>code</render_type>
             </general>
         </store_switcher>
